@@ -14,10 +14,12 @@ function isElement(o){
     );
 }
 
-function getElement(element){
+function getElement(element, context){
+    if ( context === void 0 ) { context = document; }
+
     if(typeof element === 'string'){
         try{
-            return document.querySelector(element);
+            return context.querySelector(element);
         }catch(e){ throw e; }
     }
 
@@ -38,6 +40,7 @@ function getElement(element){
 one(document.body);
 one('div');
 one({element:document.body});
+one('div', document.body);
 one(null);
 
 function one(v){

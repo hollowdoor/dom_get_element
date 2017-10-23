@@ -1,9 +1,9 @@
 import isElement from 'dom-is-element';
 
-export default function getElement(element){
+export default function getElement(element, context = document){
     if(typeof element === 'string'){
         try{
-            return document.querySelector(element);
+            return context.querySelector(element);
         }catch(e){ throw e; }
     }
 

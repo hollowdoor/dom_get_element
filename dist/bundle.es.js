@@ -1,9 +1,11 @@
 import isElement from 'dom-is-element';
 
-function getElement(element){
+function getElement(element, context){
+    if ( context === void 0 ) context = document;
+
     if(typeof element === 'string'){
         try{
-            return document.querySelector(element);
+            return context.querySelector(element);
         }catch(e){ throw e; }
     }
 
