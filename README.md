@@ -31,4 +31,4 @@ About
 
 `context` should be an upper level DOM element. Context is only useful if you pass a selector to the `value` argument of `getElement()`. The default of `context` is the `document` object.
 
-When passing an object to `getElement(value)` the `.element` property will be checked first, and then then property of index 0.
+When passing an object to `getElement(value)` the `.element` property will be checked first, and then `getElement(value)` will check for an element at property of index 0.
